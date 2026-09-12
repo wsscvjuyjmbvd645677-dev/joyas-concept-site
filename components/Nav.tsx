@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CtaButton } from "@/components/CtaButton";
 import { site } from "@/lib/site";
 
 const links = [
@@ -27,12 +28,9 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/contact"
-          className="border border-gold/50 px-3 py-2 text-[11px] tracking-[0.18em] uppercase text-gold hover:bg-gold hover:text-ink"
-        >
+        <CtaButton className="border border-gold/50 px-3 py-2 text-[11px] tracking-[0.18em] uppercase text-gold hover:bg-gold hover:text-ink">
           Start a Project
-        </Link>
+        </CtaButton>
       </div>
       <nav className="flex gap-5 overflow-x-auto border-t border-line px-5 py-3 text-[11px] tracking-[0.16em] uppercase text-mute md:hidden">
         {links.map((l) => (
