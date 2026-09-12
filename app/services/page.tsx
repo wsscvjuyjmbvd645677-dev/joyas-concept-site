@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { CtaButton } from "@/components/CtaButton";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Services" };
@@ -23,9 +23,9 @@ export default function ServicesPage() {
           </article>
         ))}
       </div>
-      <Link href="/contact" className="mt-10 inline-block bg-paper px-6 py-3 text-[12px] tracking-[0.18em] uppercase text-ink">
+      <CtaButton className="mt-10 inline-block bg-paper px-6 py-3 text-[12px] tracking-[0.18em] uppercase text-ink">
         Start a Project
-      </Link>
+      </CtaButton>
     </div>
   );
 }

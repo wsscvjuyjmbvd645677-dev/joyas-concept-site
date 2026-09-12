@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CtaButton } from "@/components/CtaButton";
-import { services, site, workAreas } from "@/lib/site";
+import { flint, services, site, workAreas } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -25,6 +25,28 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-line">
+        <Link href="/work" className="block hover:bg-white/[0.02]">
+          <div className="mx-auto grid max-w-6xl md:grid-cols-2">
+            <div className="border-b border-line md:border-b-0 md:border-r">
+              <img
+                src={flint.hero}
+                alt={flint.images[0].alt}
+                className="block h-auto w-full"
+              />
+            </div>
+            <div className="flex flex-col justify-end px-5 py-10 md:px-10">
+              <p className="text-[11px] tracking-[0.22em] uppercase text-gold">{flint.kicker}</p>
+              <h2 className="mt-4 font-serif text-4xl md:text-5xl">{flint.title}</h2>
+              <p className="mt-4 max-w-sm text-sm text-mute">{flint.line}</p>
+              <p className="mt-8 text-[12px] tracking-[0.16em] uppercase text-mute">
+                View the study →
+              </p>
+            </div>
+          </div>
+        </Link>
+      </section>
+
+      <section className="border-b border-line">
         <div className="mx-auto grid max-w-6xl md:grid-cols-2">
           {workAreas.slice(0, 4).map((item, i) => (
             <Link

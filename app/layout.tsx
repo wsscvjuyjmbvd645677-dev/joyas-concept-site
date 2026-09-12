@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const url = process.env.NEXT_PUBLIC_SITE_URL || "https://joyasconcept.local";
+const url = process.env.NEXT_PUBLIC_SITE_URL || "https://joyas-concept-site.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -16,11 +16,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    type: "website"
+    type: "website",
+    images: [{ url: "/work/flint-duo.jpg" }]
   },
   twitter: {
     card: "summary_large_image",
-    site: site.handle
+    site: site.handle,
+    images: ["/work/flint-duo.jpg"]
   }
 };
 

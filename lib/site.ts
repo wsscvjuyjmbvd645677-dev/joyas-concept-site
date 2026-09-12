@@ -59,3 +59,45 @@ export const workAreas = [
     line: "Template noise versus a locked system."
   }
 ];
+
+export const flint = {
+  slug: "flint",
+  title: "FLINT",
+  kicker: "Campaign · Lagos streetwear",
+  line: "Lagos identity system. One mark, one type, one colour.",
+  note: "Unofficial concept. Studio study — not a paid commission.",
+  hero: "/work/flint-duo.jpg",
+  images: [
+    {
+      src: "/work/flint-duo.jpg",
+      alt: "FLINT campaign — two figures in black jackets. Same streets, higher standards. Lagos.",
+      wide: true
+    },
+    {
+      src: "/work/flint-hoodie.jpg",
+      alt: "FLINT campaign — portrait in a black hoodie. Dare to be different."
+    },
+    {
+      src: "/work/flint-overpass.jpg",
+      alt: "FLINT campaign — hooded jacket under an overpass."
+    },
+    {
+      src: "/work/flint-back.jpg",
+      alt: "FLINT campaign — bomber back with Dare To Be Different, wet Lagos street.",
+      wide: true
+    },
+    {
+      src: "/work/flint-close.jpg",
+      alt: "FLINT campaign — garment close-up, zipper and woven label."
+    },
+    {
+      src: "/work/flint-lockup.jpg",
+      alt: "FLINT campaign lockup — Dare To Be Different."
+    },
+    {
+      src: "/work/flint-lineup.jpg",
+      alt: "FLINT campaign — hoodie, joggers, tee and cap.",
+      wide: true
+    }
+  ]
+};

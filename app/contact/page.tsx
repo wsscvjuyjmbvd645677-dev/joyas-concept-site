@@ -21,9 +21,6 @@ export default function ContactPage() {
           X {site.handle}
         </Link>
       </div>
-      <p className="mt-8 text-sm text-mute">
-        Primary button uses X until a WhatsApp number is added in public/config.json.
-      </p>
     </div>
   );
 }
