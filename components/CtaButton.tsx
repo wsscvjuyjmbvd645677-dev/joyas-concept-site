@@ -9,14 +9,14 @@ type Props = {
 };
 
 export function CtaButton({ className, children }: Props) {
-  const [href, setHref] = useState(site.x);
-  const [label, setLabel] = useState(children || "Start a Project on X");
+  const [href, setHref] = useState("https://wa.me/2349126552362?text=" + encodeURIComponent("Hello JOYAS CONCEPT — I want to start a project."));
+  const [label, setLabel] = useState(children || "Start a Project on WhatsApp");
 
   useEffect(() => {
     fetch("/config.json", { cache: "no-store" })
       .then((r) => r.json())
       .then((cfg) => {
-        const num = String(cfg.whatsapp || "").replace(/\D/g, "");
+        const num = String(cfg.whatsapp || "2349126552362").replace(/\D/g, "");
         if (!num) return;
         const text = encodeURIComponent("Hello JOYAS CONCEPT — I want to start a project.");
         setHref(`https://wa.me/${num}?text=${text}`);
