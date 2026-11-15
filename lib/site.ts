@@ -95,6 +95,33 @@ export const workAreas = [
   }
 ];
 
+export const concepts = [
+  {
+    title: "NOCTURNE",
+    kicker: "Fashion Campaign Concept",
+    line: "Dramatic black and gold editorial for a luxury ready-to-wear line. Lagos night energy with international finish.",
+    note: "CONCEPT — Studio study. Not a paid commission.",
+    image: "/work/concept-nocturne.jpg",
+    alt: "Luxury fashion campaign — model in tailored black against gold architectural lighting."
+  },
+  {
+    title: "JA STUDIO",
+    kicker: "Identity System Concept",
+    line: "Circular mark, refined typography and complete stationery system for a creative agency.",
+    note: "CONCEPT — Studio study. Not a paid commission.",
+    image: "/work/concept-stationery.jpg",
+    alt: "Premium brand identity presentation — gold JA mark, letterhead and business cards on dark surface."
+  },
+  {
+    title: "LUMIÈRE",
+    kicker: "Packaging Concept",
+    line: "High-end cosmetic packaging. Black and gold bottles and boxes with precise typography and quiet luxury.",
+    note: "CONCEPT — Studio study. Not a paid commission.",
+    image: "/work/concept-lumiere.jpg",
+    alt: "Luxury skincare packaging — black bottles and boxes with gold details on dark marble."
+  }
+];
+
 export const flint = {
   slug: "flint",
   title: "FLINT",
