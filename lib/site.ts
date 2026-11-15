@@ -4,6 +4,8 @@ export const site = {
   tagline: "WE MAKE BRANDS LOOK EXPENSIVE.",
   handle: "@_Geniusvibes",
   x: "https://x.com/_Geniusvibes",
+  instagram: "https://instagram.com/officialjoyas",
+  instagramHandle: "@officialjoyas",
   location: "Lagos",
   description:
     "JOYAS CONCEPT is a Lagos brand lab. We design identity systems, social systems and campaign work so ambitious businesses look premium, credible and commercially ready."
@@ -21,14 +23,47 @@ export const services = [
     note: "Identity plus ready-to-use brand system."
   },
   {
+    name: "Campaign System",
+    range: "From ₦250,000",
+    note: "Full campaign art direction, key visuals and supporting assets."
+  },
+  {
     name: "Social Media Design",
     range: "₦40,000–₦80,000/month",
     note: "A consistent feed. Not a new template every week."
   },
   {
-    name: "Print / Ad Design",
+    name: "Print & Advertising Design",
     range: "₦15,000–₦60,000/project",
     note: "One asset, one system, print-ready."
+  }
+];
+
+export const process = [
+  {
+    number: "01",
+    title: "DISCOVER",
+    description: "Understanding the brand, audience and objectives."
+  },
+  {
+    number: "02",
+    title: "STRATEGIZE",
+    description: "Developing the creative direction and positioning."
+  },
+  {
+    number: "03",
+    title: "DESIGN",
+    description: "Creating the visual identity and creative assets."
+  },
+  {
+    number: "04",
+    title: "REFINE",
+    description: "Improving every detail through feedback."
+  },
+  {
+    number: "05",
+    title: "DELIVER",
+    description: "Presenting the final approved work and assets."
   }
 ];
 
