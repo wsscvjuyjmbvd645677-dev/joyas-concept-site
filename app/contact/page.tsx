@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { site } from "@/lib/site";
 
 export default function ContactPage() {
+  const searchParams = useSearchParams();
   const [form, setForm] = useState({
     name: "",
     business: "",
@@ -15,8 +17,15 @@ export default function ContactPage() {
     timeline: "",
     description: ""
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "opened" | "error">("idle");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const serviceParam = searchParams.get("service");
+    if (serviceParam) {
+      setForm((prev) => ({ ...prev, service: serviceParam }));
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -53,9 +62,9 @@ Thank you.`;
     const encoded = encodeURIComponent(message);
     const url = `https://wa.me/2349126552362?text=${encoded}`;
 
-    setTimeout(() => {
-      window.open(url, "_blank");
-      setStatus("success");
+    const opened = window.open(url, "_blank");
+    if (opened) {
+      setStatus("opened");
       setForm({
         name: "",
         business: "",
@@ -67,7 +76,10 @@ Thank you.`;
         timeline: "",
         description: ""
       });
-    }, 600);
+    } else {
+      setStatus("error");
+      setError("WhatsApp could not open. Please allow pop-ups or contact us directly.");
+    }
   };
 
   return (
@@ -78,7 +90,7 @@ Thank you.`;
         Tell us about the brand. We reply with scope and a range on WhatsApp.
       </p>
 
-      {status === "success" && (
+      {status === "opened" && (
         <p className="mt-6 text-sm text-gold">WhatsApp opened with your details. We will reply with scope and a range.</p>
       )}
 
@@ -151,7 +163,7 @@ Thank you.`;
           {status === "loading" ? "Opening WhatsApp…" : "Send via WhatsApp"}
         </button>
 
-        <p className="text-center text-[12px] text-mute">Opens WhatsApp with your details pre-filled. No backend required.</p>
+        <p className="text-center text-[12px] text-mute">Opens WhatsApp with your details pre-filled.</p>
       </form>
 
       <div className="mt-16 border-t border-line pt-10 text-sm text-mute">
