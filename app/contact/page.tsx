@@ -1,21 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import { site } from "@/lib/site";
-
-// Note: metadata must be in a separate server component in full Next.js, but for this update we keep functional form.
 
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
     business: "",
     email: "",
+    whatsapp: "",
+    category: "Fashion",
     service: "Brand Identity",
     budget: "",
+    timeline: "",
     description: ""
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -37,10 +37,13 @@ export default function ContactPage() {
 I'd like to start a project.
 
 Name: ${form.name}
-Business: ${form.business}
+Business/Brand: ${form.business}
 Email: ${form.email}
+WhatsApp: ${form.whatsapp || "Not provided"}
+Category: ${form.category}
 Service: ${form.service}
 Budget: ${form.budget || "Not specified"}
+Timeline: ${form.timeline || "Not specified"}
 
 Project:
 ${form.description}
@@ -52,13 +55,16 @@ Thank you.`;
 
     setTimeout(() => {
       window.open(url, "_blank");
-      setStatus("idle");
+      setStatus("success");
       setForm({
         name: "",
         business: "",
         email: "",
+        whatsapp: "",
+        category: "Fashion",
         service: "Brand Identity",
         budget: "",
+        timeline: "",
         description: ""
       });
     }, 600);
@@ -72,51 +78,48 @@ Thank you.`;
         Tell us about the brand. We reply with scope and a range on WhatsApp.
       </p>
 
+      {status === "success" && (
+        <p className="mt-6 text-sm text-gold">WhatsApp opened with your details. We will reply with scope and a range.</p>
+      )}
+
       <form onSubmit={handleSubmit} className="mt-12 space-y-6">
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Your name</label>
-            <input
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold"
-              required
-            />
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Full name</label>
+            <input name="name" value={form.name} onChange={handleChange} className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" required />
           </div>
           <div>
-            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Business name</label>
-            <input
-              name="business"
-              value={form.business}
-              onChange={handleChange}
-              className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold"
-              required
-            />
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Business / brand name</label>
+            <input name="business" value={form.business} onChange={handleChange} className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" required />
           </div>
-        </div>
-
-        <div>
-          <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold"
-            required
-          />
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Service</label>
-            <select
-              name="service"
-              value={form.service}
-              onChange={handleChange}
-              className="mt-2 w-full border border-line bg-ink px-4 py-3 text-paper outline-none focus:border-gold"
-            >
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Email address</label>
+            <input type="email" name="email" value={form.email} onChange={handleChange} className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" required />
+          </div>
+          <div>
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">WhatsApp number</label>
+            <input name="whatsapp" value={form.whatsapp} onChange={handleChange} placeholder="+234..." className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" />
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <div>
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Business category</label>
+            <select name="category" value={form.category} onChange={handleChange} className="mt-2 w-full border border-line bg-ink px-4 py-3 text-paper outline-none focus:border-gold">
+              <option>Fashion</option>
+              <option>Beauty</option>
+              <option>Lifestyle</option>
+              <option>Food</option>
+              <option>Retail</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Service required</label>
+            <select name="service" value={form.service} onChange={handleChange} className="mt-2 w-full border border-line bg-ink px-4 py-3 text-paper outline-none focus:border-gold">
               <option>Brand Identity</option>
               <option>Complete Brand Kit</option>
               <option>Campaign System</option>
@@ -124,43 +127,31 @@ Thank you.`;
               <option>Print & Advertising Design</option>
             </select>
           </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Budget (optional)</label>
-            <input
-              name="budget"
-              value={form.budget}
-              onChange={handleChange}
-              placeholder="e.g. ₦150,000"
-              className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold"
-            />
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Project budget (optional)</label>
+            <input name="budget" value={form.budget} onChange={handleChange} placeholder="e.g. ₦150,000" className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" />
+          </div>
+          <div>
+            <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Preferred timeline (optional)</label>
+            <input name="timeline" value={form.timeline} onChange={handleChange} placeholder="e.g. 2 weeks" className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" />
           </div>
         </div>
 
         <div>
           <label className="text-[12px] tracking-[0.14em] uppercase text-mute">Project description</label>
-          <textarea
-            name="description"
-            value={form.description}
-            onChange={handleChange}
-            rows={6}
-            className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold"
-            required
-          />
+          <textarea name="description" value={form.description} onChange={handleChange} rows={6} className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-paper outline-none focus:border-gold" required />
         </div>
 
         {error && <p className="text-sm text-red-400">{error}</p>}
 
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="w-full bg-paper py-4 text-[13px] tracking-[0.18em] uppercase text-ink hover:bg-gold disabled:opacity-60"
-        >
+        <button type="submit" disabled={status === "loading"} className="w-full bg-paper py-4 text-[13px] tracking-[0.18em] uppercase text-ink hover:bg-gold disabled:opacity-60">
           {status === "loading" ? "Opening WhatsApp…" : "Send via WhatsApp"}
         </button>
 
-        <p className="text-center text-[12px] text-mute">
-          Opens WhatsApp with your details pre-filled. No backend required.
-        </p>
+        <p className="text-center text-[12px] text-mute">Opens WhatsApp with your details pre-filled. No backend required.</p>
       </form>
 
       <div className="mt-16 border-t border-line pt-10 text-sm text-mute">
