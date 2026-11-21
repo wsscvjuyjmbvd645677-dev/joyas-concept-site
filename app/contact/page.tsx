@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { site } from "@/lib/site";
 
-export default function ContactPage() {
+function ContactForm() {
   const searchParams = useSearchParams();
   const [form, setForm] = useState({
     name: "",
@@ -175,5 +175,13 @@ Thank you.`;
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="mx-auto max-w-3xl px-5 py-16">Loading...</div>}>
+      <ContactForm />
+    </Suspense>
   );
 }
