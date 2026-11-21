@@ -15,7 +15,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link href="/" className="flex items-center gap-3">
           <span className="grid h-8 w-8 place-items-center rounded-full border border-gold/40 text-[11px] tracking-[0.18em] text-gold">
-            JA
+            JC
           </span>
           <span className="text-[12px] font-medium tracking-[0.22em] uppercase">
             {site.name}
