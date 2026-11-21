@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-[12px] tracking-[0.18em] text-gold">
-                JA
+                JC
               </span>
               <span className="font-serif text-2xl">{site.name}</span>
             </div>
