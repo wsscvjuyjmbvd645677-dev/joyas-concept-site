@@ -29,7 +29,7 @@ export default function ServicesPage() {
               </div>
               <div className="md:text-right">
                 <p className="text-xl text-gold">{s.range}</p>
-                <Link href="/contact" className="mt-6 inline-block border border-gold/50 px-6 py-3 text-[12px] tracking-[0.16em] uppercase text-gold hover:bg-gold hover:text-ink">
+                <Link href={`/contact?service=${encodeURIComponent(s.name)}`} className="mt-6 inline-block border border-gold/50 px-6 py-3 text-[12px] tracking-[0.16em] uppercase text-gold hover:bg-gold hover:text-ink">
                   Start This Project
                 </Link>
               </div>
