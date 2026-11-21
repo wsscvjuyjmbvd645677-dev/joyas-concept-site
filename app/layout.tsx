@@ -17,13 +17,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — Brand Lab · Lagos`,
     description: site.description,
-    type: "website",
-    images: [{ url: "/work/flint-duo.jpg" }]
+    type: "website"
+    // OG image omitted until authentic JOYAS CONCEPT brand asset is available. Do not use campaign or invented images.
   },
   twitter: {
-    card: "summary_large_image",
-    site: site.handle,
-    images: ["/work/flint-duo.jpg"]
+    card: "summary",
+    site: site.handle
   }
 };
 
