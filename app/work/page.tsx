@@ -21,7 +21,7 @@ export default function WorkPage() {
             <p className="text-[11px] tracking-[0.22em] uppercase text-gold">{flint.kicker}</p>
             <h2 className="mt-4 font-serif text-5xl md:text-6xl">{flint.title}</h2>
             <p className="mt-5 text-lg text-paper">{flint.line}</p>
-            <p className="mt-4 text-sm text-mute">{flint.note}</p>
+            <p className="mt-4 text-[12px] tracking-[0.16em] uppercase text-gold">{flint.note}</p>
           </div>
           <p className="mt-8 text-[11px] tracking-[0.18em] uppercase text-mute md:mt-0">
             JOYAS CONCEPT × FLINT
