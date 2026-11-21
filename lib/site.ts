@@ -47,27 +47,27 @@ export const process = [
   {
     number: "01",
     title: "DISCOVER",
-    description: "Understanding the brand, audience and objectives."
+    description: "Understand the business, audience, price point, competitors and what currently makes the brand look unfinished."
   },
   {
     number: "02",
     title: "STRATEGIZE",
-    description: "Developing the creative direction and positioning."
+    description: "Establish one clear direction before designing. Explain the reasoning behind the mark, typography and colour system."
   },
   {
     number: "03",
     title: "DESIGN",
-    description: "Creating the visual identity and creative assets."
+    description: "Build the identity system first. Test it at small sizes, in black and white, and without relying on the brand name."
   },
   {
     number: "04",
     title: "REFINE",
-    description: "Improving every detail through feedback."
+    description: "Evaluate feedback against the agreed design direction. Make purposeful improvements without compromising the identity system."
   },
   {
     number: "05",
     title: "DELIVER",
-    description: "Presenting the final approved work and assets."
+    description: "Provide final files, variations, usage rules and relevant brand applications."
   }
 ];
 
@@ -100,30 +100,9 @@ export const workAreas = [
 ];
 
 export const concepts = [
-  {
-    title: "NOCTURNE",
-    kicker: "Fashion Campaign Concept",
-    line: "Dramatic black and gold editorial for a luxury ready-to-wear line. Lagos night energy with international finish.",
-    note: "STUDIO STUDY / UNOFFICIAL CONCEPT. Not a paid commission.",
-    image: "/work/fashion-campaign.jpg",
-    alt: "Luxury fashion campaign concept — black and gold editorial."
-  },
-  {
-    title: "JA STUDIO",
-    kicker: "Identity System Concept",
-    line: "Circular mark, refined typography and complete stationery system for a creative agency.",
-    note: "STUDIO STUDY / UNOFFICIAL CONCEPT. Not a paid commission.",
-    image: "/work/flint-lockup.jpg",
-    alt: "Identity system concept — refined mark and stationery."
-  },
-  {
-    title: "LUMIÈRE",
-    kicker: "Packaging Concept",
-    line: "High-end cosmetic packaging. Black and gold bottles and boxes with precise typography and quiet luxury.",
-    note: "STUDIO STUDY / UNOFFICIAL CONCEPT. Not a paid commission.",
-    image: "/work/flint-close.jpg",
-    alt: "Packaging concept — black and gold cosmetic bottles and boxes."
-  }
+  // Incomplete concepts removed or presented as text-only to avoid reusing unrelated images.
+  // NOCTURNE image is broken; JA STUDIO and LUMIÈRE reused FLINT assets.
+  // Hidden until authentic assets exist.
 ];
 
 export const flint = {
@@ -165,5 +144,6 @@ export const flint = {
       alt: "FLINT campaign — hoodie, joggers, tee and cap.",
       wide: true
     }
-  ]
+  ],
+  systemNotes: "Primary mark is the wordmark FLINT applied to garments. Supporting lockup pairs the slogan 'Dare To Be Different' with the collaboration credit. Colour is restrained black with white type. Applications shown on apparel. Full typography specifications, exact colour values and complete guidelines are not available for this studio study."
 };
