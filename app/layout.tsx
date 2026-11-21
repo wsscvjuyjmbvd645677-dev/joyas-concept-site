@@ -9,12 +9,13 @@ const url = process.env.NEXT_PUBLIC_SITE_URL || "https://joyas-concept-site.verc
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: {
-    default: `${site.name} — ${site.position}`,
+    default: `${site.name} — Brand Lab · Lagos`,
     template: `%s — ${site.name}`
   },
   description: site.description,
+  keywords: ["brand identity Lagos", "brand design Nigeria", "brand identity studio", "creative agency Lagos", "brand strategy Nigeria"],
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} — Brand Lab · Lagos`,
     description: site.description,
     type: "website",
     images: [{ url: "/work/flint-duo.jpg" }]

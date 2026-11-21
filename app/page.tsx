@@ -6,21 +6,20 @@ export default function HomePage() {
   return (
     <div>
       <section className="mx-auto max-w-6xl px-5 pb-24 pt-20 md:pt-36">
-        <p className="reveal text-[11px] tracking-[0.28em] uppercase text-gold">{site.position} · {site.location}</p>
-        <h1 className="reveal mt-8 max-w-5xl font-serif text-6xl leading-[0.9] md:text-8xl lg:text-9xl">
-          {site.tagline}
+        <p className="reveal text-[11px] tracking-[0.28em] uppercase text-gold">BRAND LAB · LAGOS</p>
+        <h1 className="reveal mt-8 max-w-5xl font-serif text-5xl leading-[0.95] md:text-7xl lg:text-8xl">
+          IDENTITY SYSTEMS FOR AMBITIOUS BUSINESSES.
         </h1>
         <p className="reveal mt-10 max-w-2xl text-lg leading-8 text-mute md:text-xl">
-          Identity systems for businesses that already cost money — and still look unfinished online.
           One mark. One type. One colour. Applied until people recognise you without the name.
         </p>
         <div className="reveal mt-12 flex flex-wrap gap-5">
+          <Link href="/work" className="border border-line px-8 py-4 text-[13px] tracking-[0.2em] uppercase text-mute hover:text-paper hover:border-gold">
+            Explore Selected Work
+          </Link>
           <CtaButton className="bg-paper px-8 py-4 text-[13px] tracking-[0.2em] uppercase text-ink hover:bg-gold">
             Start a Project
           </CtaButton>
-          <Link href="/work" className="border border-line px-8 py-4 text-[13px] tracking-[0.2em] uppercase text-mute hover:text-paper hover:border-gold">
-            Selected work
-          </Link>
         </div>
       </section>
 
@@ -38,6 +37,7 @@ export default function HomePage() {
               <p className="text-[11px] tracking-[0.22em] uppercase text-gold">{flint.kicker}</p>
               <h2 className="mt-5 font-serif text-5xl md:text-6xl">{flint.title}</h2>
               <p className="mt-5 max-w-sm text-base text-mute">{flint.line}</p>
+              <p className="mt-4 text-[12px] uppercase tracking-[0.16em] text-gold">{flint.note}</p>
               <p className="mt-10 text-[12px] tracking-[0.16em] uppercase text-mute">
                 View the study →
               </p>
@@ -96,7 +96,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-24 text-center">
-        <h2 className="font-serif text-5xl md:text-6xl">Ready to look expensive?</h2>
+        <h2 className="font-serif text-5xl md:text-6xl">Start a project</h2>
         <p className="mx-auto mt-6 max-w-md text-mute">Tell us about the brand. We reply with scope and a range.</p>
         <div className="mt-10">
           <CtaButton className="inline-block bg-paper px-10 py-5 text-[13px] tracking-[0.2em] uppercase text-ink hover:bg-gold">

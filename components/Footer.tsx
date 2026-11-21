@@ -14,7 +14,7 @@ export function Footer() {
               <span className="font-serif text-2xl">{site.name}</span>
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-mute">
-              {site.location}. We make brands look expensive. Identity systems, campaign work and visual direction for businesses that want to be taken seriously.
+              Brand Lab · Lagos. Identity systems for ambitious businesses. One mark. One type. One colour.
             </p>
           </div>
 
